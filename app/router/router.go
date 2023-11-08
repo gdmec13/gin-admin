@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	"log"
+	"simple-cloud-storage/app/api"
 	"simple-cloud-storage/app/global"
 	OpInit "simple-cloud-storage/app/init"
 	OpLog "simple-cloud-storage/pkg/log"
@@ -35,11 +36,18 @@ func InitRouter() {
 	middleware.SetupCommonMiddleware(r)
 
 	r.GET("/", func(c *gin.Context) {
-		fmt.Println("welcome")
+		c.String(200, "Hello Web!")
 	})
+
+	// 注册其它路由
+	registerRouter(r)
 
 	if err := r.Run(httpPort); err != nil {
 		log.Fatal("run server fail...")
 	}
 
+}
+
+func registerRouter(r *gin.Engine) {
+	r.GET("/files", api.Files)
 }
