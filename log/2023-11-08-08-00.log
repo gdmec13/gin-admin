@@ -1,1 +1,2 @@
 [GO-WEB-SERVER]2023/11/08 - 15:55:41.980 D:/AllProject/PersonProject/go/gin-simple-cloud-storage/app/router/router.go:31 ▶ [ERROR] error tips
+[simple-cloud-storage]2023/11/08 - 16:54:58.741 D:/AllProject/PersonProject/go/ginSimpleCloudStorage/app/init/mysql.go:17 ▶ [ERROR] Mysql 启动异常 Error 1049: Unknown database 'go-demo'
