@@ -20,8 +20,11 @@ func InitRouter() {
 	global.APP_LOG.Debug("logger init success")
 
 	// 初始化数据库
-	OpInit.InitMysql()
+	OpInit.SetupMysql()
 	defer global.CloseDb()
+
+	// 生成数据表
+	OpInit.GenerateTable()
 
 	// 设置gin的运行模式
 	gin.SetMode(global.APP_CONFIG.System.RunModel)
