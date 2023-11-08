@@ -26,7 +26,7 @@ func SetupMysql() {
 
 func GenerateTable() {
 	flagFile := "flag.log"
-	if _, err := util.PathExists(flagFile); err == nil {
+	if ok, _ := util.PathExists(flagFile); !ok {
 		createDBTables()
 		if ok := util.GenerateFile(flagFile, ""); ok != nil {
 			global.APP_LOG.Error("写入flag.log失败：", ok)
