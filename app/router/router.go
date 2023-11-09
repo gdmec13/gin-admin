@@ -50,4 +50,5 @@ func InitRouter() {
 
 func registerRouter(r *gin.Engine) {
 	r.GET("/files", api.Files)
+	r.GET("/login", api.Login)
 }
